@@ -34,4 +34,16 @@ public class TestCalculator {
     public void divideByZero() {
         calculator.calculate("divide", 6, 0);
     }
+
+    @Test
+    public void qiuyu() {
+        assertEquals(0, calculator.calculate("qiuyu", 6, 3));
+        assertEquals(2, calculator.calculate("qiuyu", 6, 4));
+        assertEquals(2, calculator.calculate("qiuyu", 6, -4));
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void qiuyuByZero() {
+        calculator.calculate("qiuyu", 6, 0);
+    }
 }
